@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+      <ion-list>
+
+        <ion-item>
+          <ion-input type="text" placeholder="Full Name"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-input type="text" placeholder="Form Location"></ion-input>
+        </ion-item>
+
+
+        <ion-item> 
+          <ion-input type="number" placeholder="No.of weekly trays"></ion-input>
+        </ion-item>
+
+      
+      </ion-list>
+
+      <ion-list>
+
+        <ion-item>
+          <ion-label>Do you have a permanent warehouse</ion-label>
+          <ion-toggle [(ngModel)]="wareHouseToggle" ></ion-toggle>
+        </ion-item>
+
+        <ion-item  *ngIf="wareHouseToggle"> 
+          <ion-input type="number" placeholder="How many ware houses"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <ion-list>
+
+        <ion-item>
+          <ion-label>Do you need a multiple packing</ion-label>
+          <ion-toggle [(ngModel)]="multiplePackingToggle"></ion-toggle>
+        </ion-item>
+
+        <ion-item *ngIf="multiplePackingToggle"> 
+          <ion-input type="number" placeholder="Comment"></ion-input>
+        </ion-item>
+
+      </ion-list>
+      <ion-list>
+
+        <ion-item>
+            <ion-label stacked>Point of contact name </ion-label>
+          <ion-input type="text" placeholder="Name"></ion-input>
+        </ion-item>
+
+        <ion-item> 
+            <ion-input type="number" placeholder="Telephone"></ion-input>
+         
+        </ion-item>
+
+      
+      </ion-list>
+
+
+
+  
+       
+      <ion-card payment-card> 
+
+          <ion-card-header>
+              Credit / Debit card Details
+            </ion-card-header>
+        <ion-card-content >
+          <ion-list>
+              <ion-row>
+                <ion-col>
+                  <ion-input type="number" placeholder="Card Number" maxlength="19"></ion-input>
+                </ion-col>
+              </ion-row>
+           <ion-row>
+             <ion-col>
+                <ion-input type="number" placeholder="Month" maxlength="2"></ion-input>
+             </ion-col>
+             <ion-col>
+              <ion-input type="number" placeholder="Year" maxlength="2"></ion-input>
+           </ion-col>
+           </ion-row>
+           <ion-row>
+             <ion-col>
+              <ion-input type="number" placeholder="cvv" maxlength="4"></ion-input>
+             </ion-col>
+             <ion-col>
+               <p >
+               3 or 4 digits usually found on signature strip
+               </p>
+                 </ion-col>
+           </ion-row>
+    
+          
+          </ion-list>
+    
+        </ion-card-content>
+      
+      </ion-card>
+  
+      <button ion-button block>Register</button>
+</ion-content>
